@@ -1,0 +1,141 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="Z_C_PURCHASEDOCUMENTALP_CDS" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="Z_C_PURCHASEDOCUMENTALPType" sap:label="Purchase Documents ALP" sap:semantics="aggregate" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:filterable="false" sap:updatable="false" sap:sortable="false"/><Property Name="TotaledProperties" Type="Edm.String" sap:aggregation-role="totaled-properties-list" sap:is-annotation="true"
+					sap:updatable="false" sap:sortable="false"/><Property Name="PurchaseDocument" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:text="PurchaseDocument_T" sap:updatable="false" sap:label="Purchase Document Id" sap:value-list="standard"/><Property Name="PurchaseDocument_T" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Purchase Document Id (Description)"/><Property Name="PurchaseDocumentItem" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:updatable="false" sap:label="Purchase Document Item"/><Property Name="Description" Type="Edm.String" MaxLength="128" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false"
+					sap:label="Purchase Document Item Name"/><Property Name="VendorType" Type="Edm.String" MaxLength="32" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false"
+					sap:label="Vendor Type"/><Property Name="Vendor" Type="Edm.String" MaxLength="32" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false"
+					sap:label="Vendor"/><Property Name="Priority" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:creatable="false" sap:text="Priority_T"
+					sap:updatable="false" sap:label="Priority" sap:value-list="standard"/><Property Name="Priority_T" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Priority (Description)"/><Property Name="Status" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:creatable="false" sap:text="Status_T"
+					sap:updatable="false" sap:label="Status" sap:value-list="standard"/><Property Name="Status_T" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Status (Description)"/><Property Name="PurchasingOrganization" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:text="PurchasingOrganization_T" sap:updatable="false" sap:label="Purchasing Organization" sap:value-list="standard"/><Property Name="PurchasingOrganization_T" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false"
+					sap:updatable="false" sap:label="Purchasing Organization (Description)"/><Property Name="Price" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="Price_F" sap:unit="Price_E" sap:updatable="false" sap:label="Price"/><Property Name="Price_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Price (Formatted)"/><Property Name="Price_E" Type="Edm.String" MaxLength="5" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Price (Currency)" sap:semantics="currency-code"/><Property Name="NumberOfDocuments" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="NumberOfDocuments_F" sap:updatable="false" sap:label="Number of Document Items"/><Property Name="NumberOfDocuments_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Number of Document Items (Formatted)"/><Property Name="Quantity" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="Quantity_F" sap:unit="Quantity_E" sap:updatable="false" sap:label="Quantity"/><Property Name="Quantity_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Quantity (Formatted)"/><Property Name="Quantity_E" Type="Edm.String" MaxLength="3" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Quantity (Unit)" sap:semantics="unit-of-measure"/><Property Name="OverallItemPrice" Type="Edm.Decimal" Precision="42" Scale="4" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="OverallItemPrice_F" sap:unit="OverallItemPrice_E" sap:updatable="false" sap:label="Overall Item Price"/><Property Name="OverallItemPrice_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Overall Item Price (Formatted)"/><Property Name="OverallItemPrice_E" Type="Edm.String" MaxLength="5" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Overall Item Price (Currency)" sap:semantics="currency-code"/><Property Name="CreatedOn" Type="Edm.Decimal" Precision="42" Scale="7" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="CreatedOn_F" sap:updatable="false" sap:label="Created On"/><Property Name="CreatedOn_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Created On (Formatted)"/><NavigationProperty Name="PriorityDetails" Relationship="Z_C_PURCHASEDOCUMENTALP_CDS.PriorityToListOfValues"
+					FromRole="ToRole_PriorityToListOfValues" ToRole="FromRole_PriorityToListOfValues"/><NavigationProperty Name="StatusDetails" Relationship="Z_C_PURCHASEDOCUMENTALP_CDS.StatusToListOfValues"
+					FromRole="ToRole_StatusToListOfValues" ToRole="FromRole_StatusToListOfValues"/><NavigationProperty Name="PurchasingOrganizationDetails" Relationship="Z_C_PURCHASEDOCUMENTALP_CDS.PurchasingOrganizationToListOfValues"
+					FromRole="ToRole_PurchasingOrganizationToListOfValues" ToRole="FromRole_PurchasingOrganizationToListOfValues"/></EntityType>
+			<EntityType Name="Priority" sap:label="Priority" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="Priority"/></Key><Property Name="Priority" Type="Edm.String" Nullable="false" sap:parameter="optional" sap:text="PriorityText" sap:label="Priority"
+					sap:sortable="false"/><Property Name="PriorityText" Type="Edm.String" MaxLength="60" sap:label="Priority (Description) " sap:sortable="false"/></EntityType>
+			<EntityType Name="Status" sap:label="Status" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="Status"/></Key><Property Name="Status" Type="Edm.String" Nullable="false" sap:parameter="optional" sap:text="StatusText" sap:label="Status"
+					sap:sortable="false"/><Property Name="StatusText" Type="Edm.String" MaxLength="60" sap:label="Status (Description) " sap:sortable="false"/></EntityType>
+			<EntityType Name="PurchasingOrganization" sap:label="Purchasing Organization" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="PurchasingOrganization"/></Key><Property Name="PurchasingOrganization" Type="Edm.String" Nullable="false" sap:parameter="optional" sap:text="PurchasingOrganizationText"
+					sap:label="Purchasing Organization" sap:sortable="false"/><Property Name="PurchasingOrganizationText" Type="Edm.String" MaxLength="60" sap:label="Purchasing Organization (Description) "
+					sap:sortable="false"/></EntityType>
+			<EntityType Name="PurchaseDocument" sap:label="Purchase Document Id (Master Data)" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="PurchaseDocument_ID"/></Key><Property Name="PurchaseDocument_ID" Type="Edm.String" Nullable="false" MaxLength="10" sap:text="PurchaseDocumentText"
+					sap:label="Purchase Document Id" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="PurchaseDocumentText" Type="Edm.String" sap:label="Purchase Document Id (Description)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/></EntityType>
+			<EntityType Name="ODataQueryAdditionalMetadata" sap:content-version="1">
+				<Key><PropertyRef Name="ODataQueryMetadata"/></Key><Property Name="ODataQueryMetadata" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="ODataQueryMetadataValue_Current" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="ODataQueryMetadataValueAtDefine" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<Association Name="PriorityToListOfValues" sap:content-version="1"><End Type="Z_C_PURCHASEDOCUMENTALP_CDS.Priority" Multiplicity="1" Role="FromRole_PriorityToListOfValues"/><End Type="Z_C_PURCHASEDOCUMENTALP_CDS.Z_C_PURCHASEDOCUMENTALPType" Multiplicity="*" Role="ToRole_PriorityToListOfValues"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_PriorityToListOfValues"><PropertyRef Name="Priority"/></Principal>
+					<Dependent Role="ToRole_PriorityToListOfValues"><PropertyRef Name="Priority"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="StatusToListOfValues" sap:content-version="1"><End Type="Z_C_PURCHASEDOCUMENTALP_CDS.Status" Multiplicity="1" Role="FromRole_StatusToListOfValues"/><End Type="Z_C_PURCHASEDOCUMENTALP_CDS.Z_C_PURCHASEDOCUMENTALPType" Multiplicity="*" Role="ToRole_StatusToListOfValues"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_StatusToListOfValues"><PropertyRef Name="Status"/></Principal>
+					<Dependent Role="ToRole_StatusToListOfValues"><PropertyRef Name="Status"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="PurchasingOrganizationToListOfValues" sap:content-version="1"><End Type="Z_C_PURCHASEDOCUMENTALP_CDS.PurchasingOrganization" Multiplicity="1" Role="FromRole_PurchasingOrganizationToListOfValues"/><End Type="Z_C_PURCHASEDOCUMENTALP_CDS.Z_C_PURCHASEDOCUMENTALPType" Multiplicity="*" Role="ToRole_PurchasingOrganizationToListOfValues"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_PurchasingOrganizationToListOfValues"><PropertyRef Name="PurchasingOrganization"/></Principal>
+					<Dependent Role="ToRole_PurchasingOrganizationToListOfValues"><PropertyRef Name="PurchasingOrganization"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="Z_C_PURCHASEDOCUMENTALP_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="Status" EntityType="Z_C_PURCHASEDOCUMENTALP_CDS.Status" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:content-version="1"/><EntitySet Name="PurchasingOrganization" EntityType="Z_C_PURCHASEDOCUMENTALP_CDS.PurchasingOrganization" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="PurchaseDocument" EntityType="Z_C_PURCHASEDOCUMENTALP_CDS.PurchaseDocument" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="AdditionalMetadata" EntityType="Z_C_PURCHASEDOCUMENTALP_CDS.ODataQueryAdditionalMetadata" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="Z_C_PURCHASEDOCUMENTALP" EntityType="Z_C_PURCHASEDOCUMENTALP_CDS.Z_C_PURCHASEDOCUMENTALPType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="Priority" EntityType="Z_C_PURCHASEDOCUMENTALP_CDS.Priority" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/>
+				<AssociationSet Name="PurchasingOrganizationToListOfValues_Ass"
+					Association="Z_C_PURCHASEDOCUMENTALP_CDS.PurchasingOrganizationToListOfValues" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="PurchasingOrganization" Role="FromRole_PurchasingOrganizationToListOfValues"/><End EntitySet="Z_C_PURCHASEDOCUMENTALP" Role="ToRole_PurchasingOrganizationToListOfValues"/></AssociationSet>
+				<AssociationSet Name="StatusToListOfValues_AssocSet" Association="Z_C_PURCHASEDOCUMENTALP_CDS.StatusToListOfValues" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="Status" Role="FromRole_StatusToListOfValues"/><End EntitySet="Z_C_PURCHASEDOCUMENTALP" Role="ToRole_StatusToListOfValues"/></AssociationSet>
+				<AssociationSet Name="PriorityToListOfValues_AssocSet" Association="Z_C_PURCHASEDOCUMENTALP_CDS.PriorityToListOfValues"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="Priority" Role="FromRole_PriorityToListOfValues"/><End EntitySet="Z_C_PURCHASEDOCUMENTALP" Role="ToRole_PriorityToListOfValues"/></AssociationSet>
+			</EntityContainer>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="Z_C_PURCHASEDOCUMENTALP_CDS.Z_C_PURCHASEDOCUMENTALPType/Priority">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Priority"/><PropertyValue Property="CollectionPath" String="Priority"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="Priority"/><PropertyValue Property="ValueListProperty" String="Priority"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="PriorityText"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="Z_C_PURCHASEDOCUMENTALP_CDS.Z_C_PURCHASEDOCUMENTALPType/Status">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Status"/><PropertyValue Property="CollectionPath" String="Status"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="Status"/><PropertyValue Property="ValueListProperty" String="Status"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="StatusText"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm"
+				Target="Z_C_PURCHASEDOCUMENTALP_CDS.Z_C_PURCHASEDOCUMENTALPType/PurchasingOrganization">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Purchasing Organization"/><PropertyValue Property="CollectionPath" String="PurchasingOrganization"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="PurchasingOrganization"/><PropertyValue Property="ValueListProperty" String="PurchasingOrganization"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="PurchasingOrganizationText"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm"
+				Target="Z_C_PURCHASEDOCUMENTALP_CDS.Z_C_PURCHASEDOCUMENTALPType/PurchaseDocument">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Purchase Document Id ( Master Data )"/><PropertyValue Property="CollectionPath" String="PurchaseDocument"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="PurchaseDocument"/><PropertyValue Property="ValueListProperty" String="PurchaseDocument_ID"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="PurchaseDocumentText"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/Z_C_PURCHASEDOCUMENTALP_CDS/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/Z_C_PURCHASEDOCUMENTALP_CDS/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
